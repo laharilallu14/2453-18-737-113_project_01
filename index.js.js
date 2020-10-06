@@ -23,12 +23,12 @@ MongoClient.connect(url,(err,client)=>{
 });
 
 app.get('/hospital',middleware.checkToken,(req,res)=>{
-    console.log("getting things ready");
+    console.log("Processing..");
     const data=db.collection("hospital").find().toArray().then(result=>res.json(result));
 });
 
 app.get('/ventilator',middleware.checkToken,(req,res)=>{
-    console.log("getting things ready");
+    console.log("Processing..");
     const data=db.collection("ventilators").find().toArray().then(result=>(res.json(result)));
 });
 
